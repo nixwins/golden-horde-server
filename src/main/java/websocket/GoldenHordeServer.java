@@ -5,14 +5,11 @@ import java.util.Hashtable;
 import java.util.LinkedList;
 import java.util.List;
 import java.util.Map;
-import java.util.Queue;
 
-import javax.websocket.EncodeException;
 import javax.websocket.OnClose;
 import javax.websocket.OnError;
 import javax.websocket.OnMessage;
 import javax.websocket.OnOpen;
-import javax.websocket.SendHandler;
 import javax.websocket.Session;
 import javax.websocket.server.ServerEndpoint;
 
@@ -56,8 +53,9 @@ public class GoldenHordeServer {
 				
 					String[] matchSession = (String[]) m.get("match");
 					
-					if(matchSession[0].equals(session.getId()) || matchSession[1].equals(session.getId()) && session != this.session ) {
+					if(matchSession[0].equals(session.getId())) {
 						try {
+							
 							session.getBasicRemote().sendText("From " + msg);
 						} catch (IOException e) {
 							// TODO Auto-generated catch block
@@ -90,6 +88,8 @@ public class GoldenHordeServer {
 		}else {
 		
 			Map<String, String[]> matchMap = new Hashtable<String, String[]>();
+			
+			//Попробуй сохранить сам обект сессии потом по нему вызов в онмессадже 
 			String[] userSessionStrings = {session.getId(),  this.queueUsers.get(0).getId()};
 			matchMap.put("match",  userSessionStrings);
 			this.matches.add(matchMap);
