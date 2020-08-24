@@ -1,5 +1,6 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
+    
 <!DOCTYPE html>
 <html>
 <head>
@@ -33,9 +34,9 @@
 
             </div>
         </div>
-        <div class="timeline-container">
+        <ol class="timeline-container example">
 
-        </div>
+        </ol>
 
         <div class="game-cards-container">
             <div class="settings">
@@ -44,9 +45,9 @@
                     5:00
                 </div>
             </div>
-            <div class="cards">
+            <ol class="cards example">
 				
-				<div class="card">
+				<li class="card ">
 					<div class="card-img-container">
 						<img src="https://e-history.kz/upload/iblock/a78/a78456c811efa07c0bcf4d05636f0487.jpg">
 					</div>
@@ -54,15 +55,26 @@
 					<div class="card-desc">
 						Керей-хан — первый казахский хан, один из основателей Казахского ханства и его правитель 
 					</div>
-				</div>
+				</li>
+				<li class="card ">
+					<div class="card-img-container">
+						<img src="https://avatars.mds.yandex.net/get-zen_doc/1639101/pub_5e64ece56c3f9e70e9062eee_5e64ed65824a2d437a812bea/scale_1200">
+					</div>
+					
+					<div class="card-desc">
+						Керей-хан — первый казахский хан, один из основателей Казахского ханства и его правитель 
+					</div>
+				</li>
 				
-            </div>
+            </ol>
         </div>
     </div>
     
   <div class="loader-container" id="loader">
   
  	</div>
+ 	<script type="text/javascript" src="${pageContext.request.contextPath}/static/js/jquery-3.5.1.min.js"></script> 
+ 	<script type="text/javascript" src="${pageContext.request.contextPath}/static/js/jquery-sortable.js"></script> 
  <script type="text/javascript" src="${pageContext.request.contextPath}/static/js/app.js"></script> 
 </body>
 </html>

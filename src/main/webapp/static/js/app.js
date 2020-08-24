@@ -36,7 +36,12 @@ searchGameBtn.addEventListener("click", function(){
 }, false);
 
 
+$().ready(function(){
+	$(function  () {
+  $("ol.example").sortable();
+});
 
+});
 
 
 
