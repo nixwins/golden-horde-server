@@ -1,3 +1,8 @@
 
 bin/
 .project
+
+target/
+target/*
+target
+*.MF

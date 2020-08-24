@@ -38,6 +38,11 @@ public class GoldenHordeServer {
 	@OnClose
 	public void  onClose(Session session) {
 		sessions.remove(session);
+		
+		for(int i=0; i < this.matches.size(); i++) {
+			//this.matches.get(i).get("match")[0]
+		}
+
 		System.out.println("Connection closed");
 	}
 	
@@ -45,54 +50,76 @@ public class GoldenHordeServer {
 	public void onMessage(Session session, String msg) {
 		
 		System.out.println("Message sended " + msg);
-		queuePlayers(session);
+		queuePlayers(session, msg);
 		
 		if(this.matches.size() > 0) {
 			
 			this.matches.forEach(m->{
+				Session[] matchSession = (Session[]) m.get("match");
 				
-					String[] matchSession = (String[]) m.get("match");
+			
+					if(matchSession[0].getId().equals(session.getId())) 
+					{
+						 try {
+								matchSession[1].getBasicRemote().sendText("From " + msg);
+							} catch (IOException e) {
+								// TODO Auto-generated catch block
+								e.printStackTrace();
+							}
 					
-					if(matchSession[0].equals(session.getId())) {
-						try {
-							
-							session.getBasicRemote().sendText("From " + msg);
-						} catch (IOException e) {
-							// TODO Auto-generated catch block
+					}
+					
+					else if(matchSession[1].getId().equals(session.getId())) 
+					{
+						try 
+						{
+							matchSession[0].getBasicRemote().sendText("From " + msg);
+						} 
+						catch (IOException e) 
+						{
 							e.printStackTrace();
 						}
 					}
 			});
+			
 		}
-		
-//		sessions.forEach(s->{
-//				if( s != this.session ) {
-//					try {
-//						s.getBasicRemote().sendText(msg);
-//						
-//					} catch (IOException   e) {
-//						// TODO Auto-generated catch block
-//						e.printStackTrace();
-//					}
-//				}
-//				
-//		});
+			
 	}
 	
-	private void queuePlayers(Session session) {
+	private void queuePlayers(Session session, String cmd) {
 		
-		if(this.queueUsers.size() <= 0) {
+			if(cmd.equals("search")) {
+				
+				this.queueUsers.add(session);
+				
+				System.out.println("Queue added " + session.getId());
+				
+				if(this.queueUsers.size() == 2) 
+				{
 			
-			this.queueUsers.add(session);
+					Map<String, Session[]> matchMap = new Hashtable<>();
+					
+					
+					if(!this.queueUsers.get(0).getId().equals(session.getId())){
+						
+						Session[] userSessionStrings = {this.queueUsers.get(0),  this.queueUsers.get(1)};
+						System.out.println("Second player " + this.queueUsers.get(0).getId() + " opponent " + this.queueUsers.get(1).getId());
+						matchMap.put("match",  userSessionStrings);
+						this.matches.add(matchMap);
+						try {
+							this.queueUsers.get(0).getBasicRemote().sendText("yes");
+							this.queueUsers.get(1).getBasicRemote().sendText("yes");
+						} catch (IOException e) {
+							// TODO Auto-generated catch block
+							e.printStackTrace();
+						}
+						this.queueUsers.clear();
+				}
 			
-		}else {
+					System.out.println("Players in queue : " + this.queueUsers.size());
 		
-			Map<String, String[]> matchMap = new Hashtable<String, String[]>();
-			
-			//Попробуй сохранить сам обект сессии потом по нему вызов в онмессадже 
-			String[] userSessionStrings = {session.getId(),  this.queueUsers.get(0).getId()};
-			matchMap.put("match",  userSessionStrings);
-			this.matches.add(matchMap);
-		}
+				}
+			}
+		
 	}
 }

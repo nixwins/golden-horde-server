@@ -1,0 +1,105 @@
+.loader-container{
+	background-image: url("../img/infinity-loader.svg");
+	background-repeat:no-repeat;
+	background-size:400px 400px;
+	background-position:center center;
+	width:100%;
+	height: 100vh;
+	background-color: rgba(0, 0, 0, 0.7);
+	position: absolute;
+	left:0;
+	top:0;
+	display:none;
+	
+	
+}
+html, body{
+    padding:0;
+    margin:0;
+    
+}
+body{
+	    background-image: url("../img/bg.jpg");
+   
+}
+#game-container{
+	 height: 95vh;
+    display: flex;
+
+    align-items: center;
+    flex-direction: column;
+}
+
+.timeline-container{
+    width:100%;
+    height: 300px;
+    background-color: rgba(0, 0, 0, 0.8);
+}
+
+.game-cards-container{
+    /* background-color:#c3c3c3; */
+    width: 100%;
+    height: 250px ;
+    display: flex;
+}
+
+.settings{
+    width:145px;
+    height: 250px;
+    /* background-color: aqua; */
+    padding:1px;
+    
+}
+
+.timer{
+    width:100px;
+    height: 100px;
+    background-color: #d8d7d9;
+    margin-left:5px;
+    margin-top:25px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size:38px;
+}
+
+.game-timer{
+
+    width:100px;
+    height: 50px;
+    background-color: #d8d7d9;
+    margin-left:5px;
+    margin-top:25px;
+    font-size:42px;
+    text-align: center;
+}
+
+.cards{
+	width:100%;
+	
+}
+
+.card{
+	width: 200px;
+    height: 300px;
+    overflow: hidden;
+    position: relative;
+    border: 5px solid #fff;
+    border-radius: 10px;
+}
+.card-img-container{
+	    width: 200px;
+    height: 100%;
+}
+.card-img-container img{
+	object-fit: fill;
+    width: 200px;
+}
+.card-desc{
+	position: absolute;
+    width: 200px;
+    color: #fff;
+    background-color: #000;
+    bottom: 0;
+    left: 0;
+}
