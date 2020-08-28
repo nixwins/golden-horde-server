@@ -16,6 +16,7 @@
 html, body{
     padding:0;
     margin:0;
+   /*  overflow:hidden; */
     
 }
 body{
@@ -32,8 +33,13 @@ body{
 
 .timeline-container{
     width:100%;
-    height: 300px;
+    height:400px;
     background-color: rgba(0, 0, 0, 0.8);
+
+    display:flex;
+    justify-content: center;
+/*     overflow: visible; */
+     
 }
 
 .game-cards-container{
@@ -76,16 +82,19 @@ body{
 
 .cards{
 	width:100%;
+	display:flex;
 	
 }
 
 .card{
 	width: 200px;
-    height: 300px;
-    overflow: hidden;
+    height: 250px;
+    margin-left:5px;
+ /*    overflow: hidden; */
     position: relative;
-    border: 5px solid #fff;
-    border-radius: 10px;
+/*     border: 5px solid #fff;
+    border-radius: 10px; */
+      background:linear-gradient(0deg, #000, #262626);
 }
 .card-img-container{
 	    width: 200px;
@@ -104,23 +113,49 @@ body{
     left: 0;
 }
 
-body.dragging, body.dragging * {
-  cursor: move !important;
+body{
+    background-color:#000;
 }
 
-.dragged {
-  position: absolute;
-  opacity: 0.5;
-  z-index: 2000;
+/* .card{
+
+    width:400px;
+    height: 250px;
+    position: relative;
+    margin:250px auto 0;
+    background:linear-gradient(0deg, #000, #262626);
+} */
+
+.card:before, .card:after{
+    content:'';
+    position: absolute;
+    top:-2px;
+    left:-2px;
+    /* background:linear-gradient(45deg, rgb(71, 124, 71), orange, yellow, green, orange, yellow); */
+    background:linear-gradient(45deg, #fb0094, #00ff37, #e100ff, #0059ff, #ff0000,
+     #fb0094, #0000ff, #00ff00, #ffff00, #ff0000);
+     background-size: 400%;
+    width: calc(100% + 4px);
+    height:calc(100% + 4px);
+    z-index: -1;
+    animation: card-border-anim 15s linear infinite;
 }
-ol.example {
-	display:flex;
+
+.card:after{
+    filter: blur(40px);
 }
-ol.example li.placeholder {
-  position: relative;
-  /** More li styles **/
+@keyframes card-border-anim{
+    0%{
+        background-position:  0  0;
+    }
+    50%{
+        background-position:   400% 0 ;
+    }
+    100%{
+        background-position:  0  0;
+    }
 }
-ol.example li.placeholder:before {
-  position: absolute;
-  /** Define arrowhead **/
+
+.timeline-container > card{
+	height:250px !important;
 }

@@ -34,18 +34,28 @@
 
             </div>
         </div>
-        <ol class="timeline-container example">
+		<ol class="timeline-container ">
+<!-- 			<li class="card card-zero"></li> -->
+			<li class="card ">
+				<div class="card-img-container">
+					<img
+						src="https://e-history.kz/upload/iblock/a78/a78456c811efa07c0bcf4d05636f0487.jpg">
+				</div>
+				<div>1948</div>
+				<div class="card-desc">1948</div>
+			</li>
+			<!-- <li class="card card-zero"></li> -->
 
-        </ol>
+		</ol>
 
-        <div class="game-cards-container">
+		<div class="game-cards-container">
             <div class="settings">
                 <div class="timer">10</div>
                 <div class="game-timer">
                     5:00
                 </div>
             </div>
-            <ol class="cards example">
+            <ol class="cards">
 				
 				<li class="card ">
 					<div class="card-img-container">
@@ -65,6 +75,15 @@
 						Керей-хан — первый казахский хан, один из основателей Казахского ханства и его правитель 
 					</div>
 				</li>
+				<li class="card ">
+					<div class="card-img-container">
+						<img src="https://e-history.kz/upload/iblock/a78/a78456c811efa07c0bcf4d05636f0487.jpg">
+					</div>
+					
+					<div class="card-desc">
+						Керей-хан — первый казахский хан, один из основателей Казахского ханства и его правитель 
+					</div>
+				</li>
 				
             </ol>
         </div>
@@ -74,7 +93,7 @@
   
  	</div>
  	<script type="text/javascript" src="${pageContext.request.contextPath}/static/js/jquery-3.5.1.min.js"></script> 
- 	<script type="text/javascript" src="${pageContext.request.contextPath}/static/js/jquery-sortable.js"></script> 
+ 	<script type="text/javascript" src="${pageContext.request.contextPath}/static/js/html5sortable.min.js"></script> 
  <script type="text/javascript" src="${pageContext.request.contextPath}/static/js/app.js"></script> 
 </body>
 </html>

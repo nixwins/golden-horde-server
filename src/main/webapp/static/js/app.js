@@ -36,12 +36,7 @@ searchGameBtn.addEventListener("click", function(){
 }, false);
 
 
-$().ready(function(){
-	$(function  () {
-  $("ol.example").sortable();
-});
 
-});
 
 
 
@@ -51,5 +46,21 @@ $().ready(function(){
 
 sendMsgBtn.addEventListener("click",  function(e){
 	ws.send(msgInp.value);
+}); 
+
+$( document ).ready(function() {
+	sortable('.cards', {
+		acceptFrom: false,
+		forcePlaceholderSize: true,
+		placeholderClass: 'ph-class',
+		 orientation: 'horizontal'
+		});
+
+	sortable('.timeline-container', {
+		acceptFrom: '.cards',
+			 orientation: 'horizontal'
+		});
 });
+
+
 
