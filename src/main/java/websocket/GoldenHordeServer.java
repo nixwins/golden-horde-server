@@ -99,7 +99,7 @@ public class GoldenHordeServer {
 			
 					Map<String, Session[]> matchMap = new Hashtable<>();
 					
-					
+				
 					if(!this.queueUsers.get(0).getId().equals(session.getId())){
 						
 						Session[] userSessionStrings = {this.queueUsers.get(0),  this.queueUsers.get(1)};
