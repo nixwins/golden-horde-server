@@ -159,3 +159,78 @@ body{
 .timeline-container > card{
 	height:250px !important;
 }
+
+html, body{
+    margin:0;
+    padding:0;
+    
+}
+
+.container{
+    display:flex;
+    flex-direction: column;
+    justify-content: center;
+    width:100%;
+    min-height: 100vh;
+    background-color: #979797;
+    padding:0;
+    margin:0;
+    overflow: hidden;
+}
+
+.opponent-cards, .own-cards, .cards-container, .center-cards-container {
+    width:100%;
+    height: 200px;
+    border:1px solid #000;
+    margin-bottom:10px;
+        user-select:none;
+}
+.center-cards-container{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 300px;
+}
+
+.timeline-cards{
+    height: 300px;
+}
+ul.cards, ul.timeline-cards{
+    width:100%;
+    display:flex;
+    align-items: center;
+    margin:0;
+    justify-content: center;
+}
+
+ ul.cards li, ul.timeline-cards li{
+    list-style: none;
+    margin-left:5px;
+}
+
+.card{
+    width:200px;
+    height: 190px;
+    background-color:orangered;
+}
+.card1{
+    background-color: deeppink;
+}
+.card2{
+    background-color: aqua;
+}
+.card3{
+    background-color: coral;
+}
+
+.sortable-placeholder{
+    width:200px;
+    height: 190px;
+    border:1px solid olivedrab;
+}
+
+img{
+    width:200px;
+    height: 80px;
+}
+

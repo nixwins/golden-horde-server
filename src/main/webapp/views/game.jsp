@@ -30,23 +30,41 @@
                     5:00
                 </div>
             </div>
-            <div class="cards">
-
-            </div>
+            
+	          <div class="opponent-cards">
+	            <ul class="cards">
+	                <li>
+	                    <div class="card" id="center-card">
+	                        <img src="" alt="">
+	                        <p>Some card 2 1</p>
+	                    </div>
+	                </li>
+	                <li>
+	                    <div class="card" id="center-card">
+	                        <img src="" alt="">
+	                        <p>Some card 2 2 </p>
+	                    </div>
+	                </li>
+	                <li>
+	                    <div class="card" id="center-card">
+	                        <img src="" alt="">
+	                        <p>Some card 2 3</p>
+	                    </div>
+	                </li>
+	            </ul>
+	
+	        </div>
         </div>
-		<ol class="timeline-container ">
-<!-- 			<li class="card card-zero"></li> -->
-			<li class="card ">
-				<div class="card-img-container">
-					<img
-						src="https://e-history.kz/upload/iblock/a78/a78456c811efa07c0bcf4d05636f0487.jpg">
-				</div>
-				<div>1948</div>
-				<div class="card-desc">1948</div>
-			</li>
-			<!-- <li class="card card-zero"></li> -->
-
-		</ol>
+		<div class="center-cards-container">
+           <ul class="timeline-cards">
+               <li id="center-card" data-id="1" data-position="0">
+                   <div class="card" >
+                       <img src="" alt="">
+                       <p>Some card 0</p>
+                   </div>
+               </li>
+           </ul>
+		</div>
 
 		<div class="game-cards-container">
             <div class="settings">
@@ -55,37 +73,28 @@
                     5:00
                 </div>
             </div>
-            <ol class="cards">
-				
-				<li class="card ">
-					<div class="card-img-container">
-						<img src="https://e-history.kz/upload/iblock/a78/a78456c811efa07c0bcf4d05636f0487.jpg">
-					</div>
-					
-					<div class="card-desc">
-						Керей-хан — первый казахский хан, один из основателей Казахского ханства и его правитель 
-					</div>
-				</li>
-				<li class="card ">
-					<div class="card-img-container">
-						<img src="https://avatars.mds.yandex.net/get-zen_doc/1639101/pub_5e64ece56c3f9e70e9062eee_5e64ed65824a2d437a812bea/scale_1200">
-					</div>
-					
-					<div class="card-desc">
-						Керей-хан — первый казахский хан, один из основателей Казахского ханства и его правитель 
-					</div>
-				</li>
-				<li class="card ">
-					<div class="card-img-container">
-						<img src="https://e-history.kz/upload/iblock/a78/a78456c811efa07c0bcf4d05636f0487.jpg">
-					</div>
-					
-					<div class="card-desc">
-						Керей-хан — первый казахский хан, один из основателей Казахского ханства и его правитель 
-					</div>
-				</li>
-				
-            </ol>
+            <div class="own-cards">
+            <ul class="cards">
+                <li data-id="122">
+                    <div class="card card1" >
+                        <img src="test.jpg" alt="">
+                        <p>Some card 1 1</p>
+                    </div>
+                </li>
+                <li data-id="123"  >
+                    <div class="card card2">
+                        <img src="" alt="">
+                        <p>Some card 1 2 </p>
+                    </div>
+                </li>
+                <li data-id="124">
+                    <div class="card card3">
+                        <img src="" alt="">
+                        <p>Some card 1 3</p>
+                    </div>
+                </li>
+            </ul>
+        </div>
         </div>
     </div>
     
@@ -93,7 +102,7 @@
   
  	</div>
  	<script type="text/javascript" src="${pageContext.request.contextPath}/static/js/jquery-3.5.1.min.js"></script> 
- 	<script type="text/javascript" src="${pageContext.request.contextPath}/static/js/html5sortable.min.js"></script> 
+ 	<script src="https://cdn.jsdelivr.net/npm/sortablejs@1.12.0/dist/sortable.umd.js"></script>
  <script type="text/javascript" src="${pageContext.request.contextPath}/static/js/app.js"></script> 
 </body>
 </html>
