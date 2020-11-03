@@ -50,6 +50,7 @@ public class GoldenHordeServer {
 	public void onMessage(Session session, String msg) {
 		
 		System.out.println("Message sended " + msg);
+		//switch(msg)
 		queuePlayers(session, msg);
 		
 		if(this.matches.size() > 0) {
@@ -102,13 +103,13 @@ public class GoldenHordeServer {
 				
 					if(!this.queueUsers.get(0).getId().equals(session.getId())){
 						
-						Session[] userSessionStrings = {this.queueUsers.get(0),  this.queueUsers.get(1)};
-						System.out.println("Second player " + this.queueUsers.get(0).getId() + " opponent " + this.queueUsers.get(1).getId());
+						Session[] userSessionStrings = {queueUsers.get(0),  queueUsers.get(1)};
+						System.out.println("Second player " + queueUsers.get(0).getId() + " opponent " + queueUsers.get(1).getId());
 						matchMap.put("match",  userSessionStrings);
 						this.matches.add(matchMap);
 						try {
-							this.queueUsers.get(0).getBasicRemote().sendText("yes");
-							this.queueUsers.get(1).getBasicRemote().sendText("yes");
+							queueUsers.get(0).getBasicRemote().sendText("yes");
+							queueUsers.get(1).getBasicRemote().sendText("yes");
 						} catch (IOException e) {
 							// TODO Auto-generated catch block
 							e.printStackTrace();
